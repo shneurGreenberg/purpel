@@ -1,17 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { Provider } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from "./features/user";
+import colorReducers from "./features/color";
+import "@shopify/polaris/build/esm/styles.css";
+import enTranslations from "@shopify/polaris/locales/en.json";
+import { AppProvider } from "@shopify/polaris";
+
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+    color: colorReducers,
+  },
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <AppProvider i18n={enTranslations}>
+      <App />
+    </AppProvider>
+  </Provider>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

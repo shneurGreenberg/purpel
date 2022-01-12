@@ -1,0 +1,56 @@
+.imageCard {
+  text-align: center;
+}
+
+.imageCard img {
+  width: 200px;
+}
+.cropMain {
+  width: 10%;
+  height: 10%;
+  overflow: hidden;
+
+}
+
+.backdrop {
+  position: absolute;
+  text-align: center;
+  height: 80%;
+  background-color: rgb(255, 255, 255);
+  top: 10%;
+  left: 30%;
+  right: 30%;
+  bottom: 10%;
+  border-radius: 20px;
+}
+
+.controls {
+  position: fixed;
+  bottom: 20%;
+  width: 100%;
+  height: 80px;
+}
+
+.controls-upper-area {
+  text-align: center;
+}
+
+.slider {
+  width: 30%;
+}
+
+.button-area {
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  width: 80px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #4caf50;
+  color: black;
+  cursor: pointer;
+  margin-right: 10px;
+}
