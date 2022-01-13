@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { getUserFunc, setUseFunc } from "../api/api";
 
 const initialState = {
   name: "",
@@ -17,9 +18,9 @@ export const userSlices = createSlice({
     value: initialState,
   },
   reducers: {
-    setUser: (state, action) => {
-      
+    setUser: async (state, action) => {
       state.value = action.payload;
+      await setUseFunc(action.payload);
     },
     deleteUser: (state) => {
       state.value = {};

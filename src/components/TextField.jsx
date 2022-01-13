@@ -10,10 +10,10 @@ export function TextFieldFn(props) {
   const bb = "sfdsf";
 
   const handleChange = useCallback((newValue) => {
-    debugger;
-    user.value = newValue;
-
-    console.log(newValue);
+    
+    // user.value = newValue;
+    props.onChangeValue(newValue)
+    
   }, []);
 
   return (
