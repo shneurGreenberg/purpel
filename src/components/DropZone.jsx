@@ -1,9 +1,13 @@
 import React, { useState, useCallback } from "react";
 import { Stack, Thumbnail, Caption, DropZone } from "@shopify/polaris";
 import { NoteMinor } from "@shopify/polaris-icons";
+import { useDispatch } from "react-redux";
+
 
 export function DropZoneFn() {
   const [files, setFiles] = useState([]);
+  const dispatch = useDispatch();
+
 
   const handleDropZoneDrop = useCallback(
     (_dropFiles, acceptedFiles, _rejectedFiles) =>

@@ -4,7 +4,6 @@ import App from "./App";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./features/user";
-import colorReducers from "./features/color";
 import "@shopify/polaris/build/esm/styles.css";
 import enTranslations from "@shopify/polaris/locales/en.json";
 import { AppProvider } from "@shopify/polaris";
@@ -12,7 +11,6 @@ import { AppProvider } from "@shopify/polaris";
 const store = configureStore({
   reducer: {
     user: userReducer,
-    color: colorReducers,
   },
 });
 
