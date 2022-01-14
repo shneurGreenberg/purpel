@@ -1,17 +1,17 @@
 import "./App.css";
 import { useState } from "react";
-import  ImageCropDialog  from "./ImageCrop";
+import ImageCropDialog from "./ImageCrop";
 import image from "./image.jpeg";
 
-const initData = [
-  {
-    id: 1,
-    imageUrl: image,
-    croppedImageUrl: null,
-  },
-];
+export function MainCrop(props) {
+  const initData = [
+    {
+      id: 1,
+      imageUrl: props.imageCrop,
+      croppedImageUrl: null,
+    },
+  ];
 
-export function MainCrop() {
   const [cars, setCars] = useState(initData);
   const [selectedCar, setSelectedCar] = useState(null);
 
@@ -22,7 +22,13 @@ export function MainCrop() {
   const setCroppedImageFor = (id, crop, zoom, aspect, croppedImageUrl) => {
     const newCarsList = [...cars];
     const car = cars[0];
-    const newCar = { ...car, croppedImageUrl, crop, zoom, aspect };
+    const newCar = {
+      ...car,
+      croppedImageUrl,
+      crop,
+      zoom,
+      aspect,
+    };
     newCarsList[0] = newCar;
     setCars(newCarsList);
     setSelectedCar(null);
@@ -35,10 +41,11 @@ export function MainCrop() {
   return (
     <div className="App">
       <div>
+        {" "}
         {selectedCar ? (
           <ImageCropDialog
             id={selectedCar.id}
-            imageUrl={selectedCar.imageUrl}
+            imageUrl={props.imageCrop}
             cropInit={selectedCar.crop}
             zoomInit={selectedCar.zoom}
             aspectInit={selectedCar.aspect}
@@ -46,7 +53,7 @@ export function MainCrop() {
             setCroppedImageFor={setCroppedImageFor}
             resetImage={resetImage}
           />
-        ) : null}
+        ) : null}{" "}
         {cars.map((car) => (
           <div className="imageCard" key={car.id}>
             <img
@@ -56,11 +63,10 @@ export function MainCrop() {
                 console.log(car);
                 setSelectedCar(car);
               }}
-            />
+            />{" "}
           </div>
-        ))}
-      </div>
+        ))}{" "}
+      </div>{" "}
     </div>
   );
 }
-

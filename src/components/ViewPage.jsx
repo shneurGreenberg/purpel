@@ -20,8 +20,7 @@ export function EditPage() {
     currentCompany: "",
     phoneNumber: "",
   });
-  const [image, setImage] = useState("");
-
+  const [imageCrop, setImage] = useState("");
 
   const dispatch = useDispatch();
 
@@ -39,8 +38,8 @@ export function EditPage() {
     );
   };
   const onDropImg = (value) => {
-   alert(value);
-   setImage(value);
+    alert(value);
+    setImage(value);
   };
 
   const onChangeName = (value) => {
@@ -98,7 +97,7 @@ export function EditPage() {
               <DropZoneFn onAction={onDropImg} />
             </Card>
 
-            <MainCrop />
+            {imageCrop && <MainCrop imageCrop={imageCrop} />}
 
             <TextFieldFn
               value={postUser.name}

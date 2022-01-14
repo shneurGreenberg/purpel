@@ -10,11 +10,11 @@ export function DropZoneFn(props) {
   const handleDropZoneDrop = useCallback(
     (_dropFiles, acceptedFiles, _rejectedFiles) => {
       setFiles((files) => [...files, ...acceptedFiles]);
-    
-      props.onAction(files);
+      const bb = window.URL.createObjectURL(acceptedFiles[0]);
+
+      props.onAction(bb);
       const imageUrl = acceptedFiles[0].name;
       console.log(imageUrl); //צילום מסך 2022-01-03 170433.jpg
-      
     },
 
     []
@@ -31,9 +31,8 @@ export function DropZoneFn(props) {
             size="small"
             alt={file.name}
             source={
-              validImageTypes.includes(file.type)
-                ? window.URL.createObjectURL(file)
-                : NoteMinor
+              // validImageTypes.includes(file.type)
+              window.URL.createObjectURL(file)
             }
           />
           <div>
