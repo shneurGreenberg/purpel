@@ -27,21 +27,7 @@ function App() {
   const user = useSelector((state) => state.user.value);
   const [postUser, setPostUser] = useState(user);
 
-  const dispatch = useDispatch();
-
-  const saveUser = () => {
-    dispatch(
-      setUser({
-        name: "TextFieldFn.state.value",
-        title: "uuu",
-        description: 22,
-        currentCompany: "fff",
-        describYorself: "ddd",
-        phoneNumber: "TextFieldFn.state.value",
-        image: "ddd",
-      })
-    );
-  };
+  
   const createUser = () => {
     alert("createUser");
   };
@@ -113,7 +99,7 @@ function App() {
 
             <Card sectioned title={"User profile"}>
               <Card sectioned subdued>
-                <TextFieldFn title="Job title" value={"sadssda"} />
+                <TextFieldFn title="Job title" value={JSON.stringify(user.title)} />
                 <TextFieldFn title="Current company" value={"sadssda"} />
                 <TextFieldFn
                   title="describYorself"

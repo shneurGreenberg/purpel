@@ -3,32 +3,34 @@
 }
 
 .imageCard img {
-  width: 200px;
-}
-.cropMain {
-  width: 10%;
-  height: 10%;
-  overflow: hidden;
-
+  width: 600px;
 }
 
 .backdrop {
-  position: absolute;
-  text-align: center;
-  height: 80%;
-  background-color: rgb(255, 255, 255);
-  top: 10%;
-  left: 30%;
-  right: 30%;
-  bottom: 10%;
-  border-radius: 20px;
+  position: fixed;
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+}
+
+.crop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 80px;
 }
 
 .controls {
   position: fixed;
-  bottom: 20%;
-  width: 100%;
+  bottom: 0px;
+  width: 70%;
   height: 80px;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .controls-upper-area {
@@ -36,7 +38,7 @@
 }
 
 .slider {
-  width: 30%;
+  width: 50%;
 }
 
 .button-area {
@@ -44,13 +46,11 @@
   margin-top: 20px;
 }
 button {
-  width: 80px;
-  height: 40px;
-  font-size: 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #4caf50;
-  color: black;
-  cursor: pointer;
+  margin-left: 10px;
   margin-right: 10px;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  outline: none;
+  background-color: blueviolet;
 }

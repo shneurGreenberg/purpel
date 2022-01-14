@@ -1,4 +1,3 @@
-import User from "./user";
 import "@shopify/polaris/build/esm/styles.css";
 import { Page, Card } from "@shopify/polaris";
 import { DropZoneFn } from "./DropZone";
@@ -75,9 +74,7 @@ export function EditPage() {
 
   return (
     <div className="App">
-      {/* <MainPage /> */}
-      {/* <User /> */}
-      {/* <ChangeColor />  */}
+      {imageCrop && <MainCrop imageCrop={imageCrop} />}
 
       <Page>
         <TopBarExample />
@@ -96,8 +93,6 @@ export function EditPage() {
             <Card sectioned title={"Profile picture"}>
               <DropZoneFn onAction={onDropImg} />
             </Card>
-
-            {imageCrop && <MainCrop imageCrop={imageCrop} />}
 
             <TextFieldFn
               value={postUser.name}

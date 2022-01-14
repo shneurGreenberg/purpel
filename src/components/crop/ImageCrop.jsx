@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import Cropper from "react-easy-crop";
 import getCroppedImg from "./cropImage";
 
-const aspectRatios = [
-  { value: 16 / 9, text: "16/9" },
-];
+const aspectRatios = [{ value: 16 / 9, text: "16/9" }];
 
-export  const ImageCropDialog = ({
+export const ImageCropDialog = ({
   id,
   imageUrl,
   cropInit,
@@ -38,8 +36,6 @@ export  const ImageCropDialog = ({
     setZoom(zoom);
   };
 
- 
-
   const onCropComplete = (croppedArea, croppedAreaPixels) => {
     setCroppedAreaPixels(croppedAreaPixels);
   };
@@ -55,37 +51,37 @@ export  const ImageCropDialog = ({
 
   return (
     <div>
-      <div className="backdrop"></div>
-      <div className="crop-container">
-        <Cropper
-          image={imageUrl}
-          zoom={zoom}
-          crop={crop}
-          aspect={aspect.value}
-          onCropChange={onCropChange}
-          onZoomChange={onZoomChange}
-          onCropComplete={onCropComplete}
-        />
-      </div>
-      <div className="controls">
-        <div className="controls-upper-area">
-          <input
-            type="range"
-            min={1}
-            max={3}
-            step={0.1}
-            value={zoom}
-            onInput={(e) => {
-              onZoomChange(e.target.value);
-            }}
-            className="slider"
-          ></input>
-         
+      <div className="backdrop">
+        <div className="crop-container">
+          <Cropper
+            image={imageUrl}
+            zoom={zoom}
+            crop={crop}
+            aspect={aspect.value}
+            onCropChange={onCropChange}
+            onZoomChange={onZoomChange}
+            onCropComplete={onCropComplete}
+          />
         </div>
-        <div className="button-area">
-          <button onClick={onCancel}>Cancel</button>
-          <button onClick={onResetImage}>Reset</button>
-          <button onClick={onCrop}>Crop</button>
+        <div className="controls">
+          <div className="controls-upper-area">
+            <input
+              type="range"
+              min={1}
+              max={3}
+              step={0.01}
+              value={zoom}
+              onInput={(e) => {
+                onZoomChange(e.target.value);
+              }}
+              className="slider"
+            ></input>
+          </div>
+          <div className="button-area">
+            <button onClick={onCancel}>Cancel</button>
+            <button onClick={onResetImage}>Reset</button>
+            <button onClick={onCrop}>Crop</button>
+          </div>
         </div>
       </div>
     </div>
