@@ -25,9 +25,7 @@ import { setUser } from "./features/user";
 
 function App() {
   const user = useSelector((state) => state.user.value);
-  const [postUser, setPostUser] = useState(user);
 
-  
   const createUser = () => {
     alert("createUser");
   };
@@ -96,17 +94,20 @@ function App() {
                 />
               </Card>
             </Card.Section>
-
+            {JSON.stringify(user)}
             <Card sectioned title={"User profile"}>
               <Card sectioned subdued>
-                <TextFieldFn title="Job title" value={JSON.stringify(user.title)} />
-                <TextFieldFn title="Current company" value={"sadssda"} />
+                <TextFieldFn title="Job title" value={user.title} />
+                <TextFieldFn
+                  title="Current company"
+                  value={user.currentCompany}
+                />
                 <TextFieldFn
                   title="describYorself"
                   multiline={4}
-                  value={"sadssda"}
+                  value={user.describYorself}
                 />
-                <PhoneFieldFn title={"Phone number"} value={9999} />
+                <PhoneFieldFn title={"Phone number"} value={user.phoneNumber} />
               </Card>
             </Card>
           </Layout>

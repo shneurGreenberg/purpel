@@ -9,6 +9,7 @@ import { PhoneFieldFn } from "./phone";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { setUser } from "../features/user";
+import { setUseFunc } from "../api/api";
 
 export function EditPage() {
   // const user = useSelector((state) => state.user.value);
@@ -17,20 +18,24 @@ export function EditPage() {
     title: "",
     description: "",
     currentCompany: "",
+    describYorself: "Foo",
     phoneNumber: "",
+    image: "ddd",
   });
   const [imageCrop, setImage] = useState("");
 
   const dispatch = useDispatch();
 
-  const saveUser = () => {
+  const saveUser = async () => {
+    await setUseFunc(postUser);
+
     dispatch(
       setUser({
         name: postUser.name,
         title: postUser.title,
         description: postUser.description,
         currentCompany: postUser.currentCompany,
-        describYorself: postUser.describYorself,
+        describYorself: "Foo",
         phoneNumber: postUser.phoneNumber,
         image: "ddd",
       })
@@ -53,6 +58,7 @@ export function EditPage() {
       title: value,
     }));
   };
+
   const onChangeDescription = (value) => {
     setPostUser((prevState, newState) => ({
       ...prevState,
@@ -97,6 +103,12 @@ export function EditPage() {
             <TextFieldFn
               value={postUser.name}
               onChangeValue={onChangeName}
+              title="Job title"
+            />
+
+            <TextFieldFn
+              value={postUser.title}
+              onChangeValue={onChangeTitle}
               title="Job title"
             />
             <TextFieldFn

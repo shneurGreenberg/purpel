@@ -3,7 +3,6 @@ import { getUserFunc, setUseFunc } from "../api/api";
 
 const initialState = {
   name: "",
-  titleDescription: "",
   title: "",
   description: "",
   currentCompany: "",
@@ -18,9 +17,9 @@ export const userSlices = createSlice({
     value: initialState,
   },
   reducers: {
-    setUser: async (state, action) => {
+    setUser: (state, action) => {
+      debugger;
       state.value = action.payload;
-      await setUseFunc(action.payload);
     },
     deleteUser: (state) => {
       state.value = {};
