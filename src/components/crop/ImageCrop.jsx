@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Cropper from "react-easy-crop";
 import getCroppedImg from "./cropImage";
 
@@ -25,7 +25,7 @@ export const ImageCropDialog = ({
   }
   const [zoom, setZoom] = useState(zoomInit);
   const [crop, setCrop] = useState(cropInit);
-  const [aspect, setAspect] = useState(aspectInit);
+  const [aspect] = useState(aspectInit);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
 
   const onCropChange = (crop) => {

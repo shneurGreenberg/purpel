@@ -1,6 +1,6 @@
-import User from "./components/user";
+// import User from "./components/user";
 import "@shopify/polaris/build/esm/styles.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HomeMajor } from "@shopify/polaris-icons";
 import { EditPage } from "./components/ViewPage";
 
@@ -14,13 +14,13 @@ import {
   Button,
   Navigation,
 } from "@shopify/polaris";
-import { DropZoneFn } from "./components/DropZone";
+// import { DropZoneFn } from "./components/DropZone";
 import { TextFieldFn } from "./components/TextField";
 import { TopBarExample } from "./components/TopBar";
 import { PhoneFieldFn } from "./components/phone";
-import { useSelector, useDispatch } from "react-redux";
-import React, { useState } from "react";
-import { setUser } from "./features/user";
+import { useSelector } from "react-redux";
+import React from "react";
+// import { setUser } from "./features/user";
 // import { MainCrop } from "./components/crop/mainCrop";
 
 function App() {

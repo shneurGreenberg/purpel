@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUserFunc, setUseFunc } from "../api/api";
+// import { getUserFunc, setUseFunc } from "../api/api";
 
 const initialState = {
   name: "",

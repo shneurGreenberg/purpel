@@ -6,7 +6,7 @@ import { TopBarExample } from "./TopBar";
 import { MainCrop } from "../components/crop/mainCrop";
 import { PhoneFieldFn } from "./phone";
 // import { prefixExample } from "./select";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import React, { useState } from "react";
 import { setUser } from "../features/user";
 import { setUseFunc } from "../api/api";

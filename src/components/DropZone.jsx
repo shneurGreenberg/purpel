@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from "react";
 import { Stack, Thumbnail, Caption, DropZone } from "@shopify/polaris";
-import { NoteMinor } from "@shopify/polaris-icons";
-import { useDispatch } from "react-redux";
+// import { NoteMinor } from "@shopify/polaris-icons";
+// import { useDispatch } from "react-redux";
 
 export function DropZoneFn(props) {
   const [files, setFiles] = useState([]);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleDropZoneDrop = useCallback(
     (_dropFiles, acceptedFiles, _rejectedFiles) => {
@@ -17,10 +17,10 @@ export function DropZoneFn(props) {
       console.log(imageUrl); //צילום מסך 2022-01-03 170433.jpg
     },
 
-    []
+    [props]
   );
 
-  const validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+  // const validImageTypes = ["image/gif", "image/jpeg", "image/png"];
 
   const fileUpload = !files.length && <DropZone.FileUpload />;
   const uploadedFiles = files.length > 0 && (
